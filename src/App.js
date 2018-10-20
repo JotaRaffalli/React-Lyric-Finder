@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/layout/Navbar'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Index from './components/layout/Index'
+import Lyrics from './components/tracks/Lyrics'
 import {Provider} from './context'
 
 import './App.css';
@@ -11,13 +12,12 @@ class App extends Component {
     return (
       <Provider>
         <Router>
-        <React.Fragment className="App">
+        <React.Fragment>
           <Navbar/>
           <div className="container">
-            <Switch>
-              <Route exact path="/" component={Index}>
-
-              </Route>
+            <Switch>            
+              <Route exact path="/" component={Index}></Route>
+              <Route exact path="/lyrics/track/:id" component={Lyrics}></Route>
             </Switch>
           </div>
         </React.Fragment>
