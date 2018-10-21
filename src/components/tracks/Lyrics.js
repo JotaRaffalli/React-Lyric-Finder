@@ -16,11 +16,13 @@ class Lyrics extends Component {
     }
 
 async componentDidMount() {
+    // Track Lyric
    await axios.get(`https://cors-anywhere.herokuapp.com/${process.env.REACT_APP_MM_ROOT}track.lyrics.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}
     `)
     .then(res => {
         this.setState({lyrics: res.data.message.body.lyrics})
 
+        // Track info
         return axios.get(
             `https://cors-anywhere.herokuapp.com/${process.env.REACT_APP_MM_ROOT}track.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}
         `)
@@ -92,15 +94,10 @@ async componentDidMount() {
                             </ul>
                         </div>
                         <div className="col-4">
-                            <img src={ albumArt[0].image[3][Object.keys(albumArt[0].image[3])[0]] || "http://s.mxmcdn.net/images-storage/albums/nocover.png"} className="img-thumbnail"/>
+                            <img src={ albumArt[0].image[3][Object.keys(albumArt[0].image[3])[0]] || "http://s.mxmcdn.net/images-storage/albums/nocover.png"} alt={`Album cover ${track.album_name}`} className="img-thumbnail"/>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </React.Fragment>
         )
     }
