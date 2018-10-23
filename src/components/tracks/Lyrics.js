@@ -32,7 +32,7 @@ async componentDidMount() {
     .catch( err => console.log(err))
 
     //album cover
-    await axios.get(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.track.album_name}&api_key=9d75fef99463652339f393a066f00899&format=json`)
+    await axios.get(`https://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.track.album_name}&api_key=9d75fef99463652339f393a066f00899&format=json`)
     .then(res => {
         this.setState({albumArt: res.data.results.albummatches.album}) 
     })
