@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Index from './components/layout/Index'
 import Lyrics from './components/tracks/Lyrics'
@@ -20,6 +21,7 @@ class App extends Component {
               <Route exact path="/lyrics/track/:id" component={Lyrics}></Route>
             </Switch>
           </div>
+          <Footer/>
         </React.Fragment>
       </Router> 
       </Provider>     

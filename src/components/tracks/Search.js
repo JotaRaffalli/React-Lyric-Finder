@@ -1,21 +1,35 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Spinner from '../layout/spinner'
 import {Consumer} from '../../context'
 
 class Search extends Component {
   
     state = {
-        trackTitle: ''
+        trackTitle: '',
+        isLoading: false
     }
   
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
   }
 
-  findTrack = (e) => {
+  findTrack = (dispatch, e) => {
     e.preventDefault()
+    this.setState({isLoading: true})
     axios.get(`https://cors-anywhere.herokuapp.com/${process.env.REACT_APP_MM_ROOT}track.search?q_track=${this.state.trackTitle}&page_size=10&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}
-    `).then(res => console.log(res.data)).catch(err => console.log(err))
+    `)
+    .then(res => {
+      dispatch(
+        {
+          type:'SEARCH_TRACKS',
+          payload: res.data.message.body.track_list
+        }
+      )
+      this.setState({trackTitle: '', isLoading: false})
+    })
+    .catch(err => console.log(err))
+    
   }
 
 
@@ -24,14 +38,15 @@ class Search extends Component {
       <Consumer>
         {
           value => {
+            const { dispatch } = value
             return(
               <div className="card card-body mb-4 p-a">
                 <h1 className="display-4 text-center">
-                  <i className="fa fa-music"></i> Search For A Song
+                  Search for a Song
                 </h1>
-                <p className="lead text-center">Get the lyrics for any Song</p>
+                <p className="lead text-center">Get the lyrics for any Song!</p>
 
-                <form onSubmit={this.findTrack}>
+                <form onSubmit={this.findTrack.bind(this, dispatch)}>
                   <div className="form-group">
                     <input 
                       type="text" 
@@ -44,9 +59,10 @@ class Search extends Component {
                     </input>
                   </div>
                   <button className="btn btn-info btn-lg btn-block mb-5" type="submit">
-                    Search Song
+                    Search
                   </button>
-                </form> 
+                </form>
+                {this.state.isLoading && <Spinner></Spinner>}
               </div>
             )
           }
