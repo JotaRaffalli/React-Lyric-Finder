@@ -7,11 +7,16 @@ class Search extends Component {
   
     state = {
         trackTitle: '',
-        isLoading: false
+        isLoading: false,
+        description: ''
     }
   
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
+  }
+
+  componentDidMount() {
+    Math.floor(Math.random()*2) == 0 ? this.setState({description:'Get the lyrics for any Song!'}) : this.setState({description:'This is one of my personal projects'}) 
   }
 
   findTrack = (dispatch, e) => {
@@ -40,11 +45,11 @@ class Search extends Component {
           value => {
             const { dispatch } = value
             return(
-              <div className="card card-body mb-4 p-a">
+              <div className="card card-body mb-5 p-a">
                 <h1 className="display-4 text-center">
                   Search for a Song
                 </h1>
-                <p className="lead text-center">Get the lyrics for any Song!</p>
+                <p className="lead text-center">{this.state.description}</p>
 
                 <form onSubmit={this.findTrack.bind(this, dispatch)}>
                   <div className="form-group">
@@ -58,7 +63,7 @@ class Search extends Component {
                     >
                     </input>
                   </div>
-                  <button className="btn btn-info btn-lg btn-block mb-5" type="submit">
+                  <button className="btn btn-custom btn-lg btn-block mb-5" type="submit">
                     Search
                   </button>
                 </form>

@@ -54,10 +54,10 @@ async componentDidMount() {
         
         return (
             <React.Fragment>
-                <Link to="/" className="btn btn-dark btn-sm mb-4"><i className="fas fa-arrow-left"></i> Go Back</Link>
+                <Link to="/" className="btn btn-info btn-sm mb-4"><i className="fas fa-arrow-left"></i> Go Back</Link>
                 <div className="container mb-4">
-                    <div className="row">
-                        <div className="col-8">
+                    <div className="row justify-content-center">
+                        <div className="col-12 col-md-8">
                             <div className="card">
                                 <h5 className="card-header">
                                     <span className="text-info">{track.track_name}</span> by <span className="text-secondary">{track.artist_name}</span>
@@ -93,8 +93,8 @@ async componentDidMount() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-4">
-                            <img src={ albumArt[0].image[3][Object.keys(albumArt[0].image[3])[0]] || "http://s.mxmcdn.net/images-storage/albums/nocover.png"} alt={`Album cover ${track.album_name}`} className="img-thumbnail"/>
+                        <div className="col-6 col-md-4">
+                            <img src={ albumArt[0].image[3][Object.keys(albumArt[0].image[3])[0]] || "http://s.mxmcdn.net/images-storage/albums/nocover.png"} alt={`Album cover ${track.album_name}`} className="img-thumbnail mt-3"/>
                         </div>
                     </div>
                 </div>

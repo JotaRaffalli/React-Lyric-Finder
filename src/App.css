@@ -1,0 +1,14 @@
+.btn-custom {
+    background-color: #2E9AFE;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: rgb(43, 144, 238);
+    color: white;
+}
+
+.btn-custom:active {
+    background-color: rgb(32, 119, 201);
+    color: white;
+}
