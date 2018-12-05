@@ -15,7 +15,7 @@ import Track from '../tracks/Track'
                 }else {
                     return (
                         <React.Fragment>
-                            <h2 className="text-center display-5 mb-5">{heading}</h2>
+                            <h2 className="text-center display-4 mb-5" style={{fontSize:40}}>{heading}</h2>
                             <div className="row">
                                 {track_list.map(item => (
                                     <Track key={item.track.track_id} track={item.track}/>

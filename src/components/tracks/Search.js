@@ -16,7 +16,7 @@ class Search extends Component {
   }
 
   componentDidMount() {
-    Math.floor(Math.random()*2) == 0 ? this.setState({description:'Get the lyrics for any Song!'}) : this.setState({description:'This is one of my personal projects'}) 
+    Math.floor(Math.random()*2) === 0 ? this.setState({description:'Get the lyrics for any Song!'}) : this.setState({description:'This is one of my personal projects'}) 
   }
 
   findTrack = (dispatch, e) => {
@@ -67,6 +67,7 @@ class Search extends Component {
                     Search
                   </button>
                 </form>
+                
                 {this.state.isLoading && <Spinner></Spinner>}
               </div>
             )

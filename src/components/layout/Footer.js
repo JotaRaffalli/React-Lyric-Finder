@@ -10,14 +10,14 @@ const Footer = () => {
               <div className="col-6 col-md">
                   <h5>Jose Luis Raffalli Adriani</h5>
                   <p>
-						Special thanks to Brad Traversy<a href="https://www.udemy.com/user/brad-traversy/" target="_blank"> Traversy Media</a> for his cool tutorials.
+						Special thanks to Brad Traversy<a href="https://www.udemy.com/user/brad-traversy/" target="_blank" rel="noopener noreferrer"> Traversy Media</a> for his cool tutorials.
 				  </p>
                   
               </div>
               <div className="col-6 col-md">
                   <h5>Follow me</h5>
                   <ul className="list-unstyled text-small">
-                      <li><a target="_blank" className="text-muted" href="https://www.linkedin.com/in/jos%C3%A9raffalli/">Linkedin</a></li>
+                      <li><a target="_blank" rel="noopener noreferrer" className="text-muted" href="https://www.linkedin.com/in/jos%C3%A9raffalli/">Linkedin</a></li>
                       <li><a className="text-muted" href="https://github.com/JotaRaffalli">GitHub</a></li>
                       <li><a className="text-muted" href="http://raffallijoseluis.com.ve">Raffalli Jose</a></li>
                   </ul>
