@@ -1,11 +1,15 @@
 # Lyric Finder
+
+<img src="https://github.com/JotaRaffalli/React-Lyric-Finder/tree/master/Screens/Safari Lyric Finder.jpg"
+     alt="React Lyric Finder"
+     style="float: left; margin-right: 10px;" />
+
 This is a small app that I made to search song's lirycs using MusixMatch developers API.
 I made it with React js, webpack and react's context API to handle a share state with the information passed by every component.
 
 <i> Special thanks to Traversy Media for his great tutorial of React context API </i>
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
