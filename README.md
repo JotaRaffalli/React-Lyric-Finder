@@ -1,6 +1,6 @@
 # Lyric Finder
 
-<img src="https://github.com/JotaRaffalli/React-Lyric-Finder/tree/master/Screens/Safari Lyric Finder.jpg"
+<img src="/Screens/Safari Lyric Finder.jpg"
      alt="React Lyric Finder"
      style="float: left; margin-right: 10px;" />
 
