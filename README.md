@@ -4,7 +4,7 @@
      alt="React Lyric Finder"
      style="float: left; margin-right: 10px;" />
 
-This is a small app that I made to search song's lirycs using MusixMatch developers API.
+This is a small app that I made to search song's lyrics using MusixMatch developers API.
 I made it with React js, webpack and react's context API to handle a share state with the information passed by every component.
 
 <i> Special thanks to Traversy Media for his great tutorial of React context API </i>
