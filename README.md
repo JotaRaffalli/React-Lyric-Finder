@@ -1,6 +1,6 @@
 # Lyric Finder
 
-This is a small app that allows users to find song's lyrics using MusixMatch developers API. It also fetches the songs album cover from other external API to give users a image preview and help them identify the corresponding artists. 
+This is a small app that allows users to find song's lyrics using **MusixMatch** developers API. It also fetches the songs album cover from other external API to give users a image preview to help them identify the corresponding artists. 
 
 <img src="/Screens/Safari Lyric Finder.jpg"
      alt="React Lyric Finder"
